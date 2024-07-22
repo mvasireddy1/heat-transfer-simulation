@@ -1,0 +1,16 @@
+<div class="component-container">
+  <h2>Solar Panel</h2>
+  <label>
+    Efficiency:
+    <input type="number" [(ngModel)]="efficiency" min="0" />
+  </label>
+  <label>
+    Area (m²):
+    <input type="number" [(ngModel)]="area" min="0" />
+  </label>
+  <label>
+    Solar Radiation (W/m²):
+    <input type="number" [(ngModel)]="solarRadiation" min="0" />
+  </label>
+  <button (click)="collectEnergy()">Collect Energy</button>
+</div>

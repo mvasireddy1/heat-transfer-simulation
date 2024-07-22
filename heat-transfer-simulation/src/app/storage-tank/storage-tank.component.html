@@ -1,0 +1,13 @@
+<div class="component-container">
+  <h2>Storage Tank</h2>
+  <label>
+    Capacity (liters):
+    <input type="number" [(ngModel)]="capacity" min="0" />
+  </label>
+  <label>
+    Initial Temperature (°C):
+    <input type="number" [(ngModel)]="initialTemperature" min="0" />
+  </label>
+  <p *ngIf="isFinite(finalTemperature)">Final Temperature: {{ finalTemperature.toFixed(2) }} °C</p>
+  <p *ngIf="!isFinite(finalTemperature)">Please enter valid inputs to calculate the final temperature.</p>
+</div>

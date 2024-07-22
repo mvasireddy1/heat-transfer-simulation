@@ -1,0 +1,26 @@
+<div class="app-container">
+  <h1>{{ title }}</h1>
+  <div class="explanation">
+    <h2>How It Works</h2>
+    <p>
+      This simulation calculates the final temperature of water in a storage tank using the following steps:
+    </p>
+    <ul>
+      <li>
+        <strong>Solar Panel:</strong> Collects energy based on efficiency, area, and solar radiation.
+      </li>
+      <li>
+        <strong>Pump:</strong> Transfers collected energy with a given efficiency.
+      </li>
+      <li>
+        <strong>Storage Tank:</strong> Calculates the final temperature based on the transferred energy, capacity of the tank, and initial water temperature.
+      </li>
+    </ul>
+    <p>
+      Ensure that all input values are greater than zero and properly entered to get accurate results.
+    </p>
+  </div>
+  <app-solar-panel (energyCollected)="onEnergyCollected($event)"></app-solar-panel>
+  <app-pump [energy]="energyCollected" (energyTransferred)="onEnergyTransferred($event)"></app-pump>
+  <app-storage-tank [energy]="energyTransferred"></app-storage-tank>
+</div>
